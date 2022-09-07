@@ -1,3 +1,5 @@
+const url = " http://localhost:3000/toys";
+
 let addToy = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,3 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// Fetchers
+
+function getAllToys(url) {
+  return fetch(url)
+    .then((res) => res.json())
+    .then((toys) => {
+      console.log(toys);
+    });
+}
+console.log(getAllToys(url))
